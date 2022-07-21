@@ -1,0 +1,199 @@
+
+footer {
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-color: var(--footer-bg);
+  z-index: -1;
+}
+
+.footTop {
+  max-width: 1280px;
+  margin: auto;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.familySite {
+  position: relative;
+}
+
+.familySite span {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border: 1px solid white;
+  transition: .3s;
+}
+
+.familySite:hover span{
+  background-color: white;
+  color: var(--footer-bg);
+  font-weight: bold;
+}
+
+.familySite span i {
+  padding-left: 1rem
+}
+
+.familySite ul {
+  position: absolute;
+  width: 100%;
+  bottom : 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: #EAEAEA;
+  color: var(--font-color);
+  height: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.familySite:hover ul {
+  height: 25rem;
+}
+
+.familySite ul li {
+  width: 100%;
+  text-align: center;
+  transition: .3s
+}
+
+.familySite ul li:hover {
+  font-weight: bold;
+}
+
+.familySite ul li a {
+  display: inline-block;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.familySite ul li:not(:last-of-type) {
+  border-top: 1px solid white;
+}
+
+.footBottom{
+  width: 100%;
+  background-color: #EAEAEA;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.footLogo {
+  width: 20%;
+}
+
+.footLogo img {
+  width: 100%;
+  min-width: 100px;
+  max-width: 180px;
+}
+
+.footTxt {
+  width: 50%;
+}
+
+.footTxt p:nth-of-type(1) {
+  padding: 1rem 0;
+}
+
+.footPolicy a {
+  position: relative;
+  padding-right: 2rem;
+}
+
+.footPolicy a:not(:last-of-type)::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: var(--gray-color);
+  right: 1rem;
+}
+
+
+.footMark {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footMark img {
+  max-height: 45px;
+}
+
+.footMark img:not(:last-of-type) {
+  padding-right: 2rem;
+}
+
+@media (max-width : 1300px) {
+  .footTop,
+  .footBottom {
+    padding: 0 50px;
+  }
+
+}
+
+@media (max-width : 1080px) {
+  .footBottom {
+    flex-direction: column;
+    height: max-content;
+    padding: 2rem 50px;
+  }
+
+  .footTxt  {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .footMark {
+    justify-content: center;
+  }
+
+  .footBottom .footMark img {
+    padding : 0
+  }
+
+  .footMark img:nth-of-type(2) {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .footTop {
+    padding: 0 2rem;
+    width: auto;
+    margin: 0;
+    height: 50px;
+  }
+
+  .footBottom {
+    padding: 2rem;
+  }
+
+  .familySite {
+    display: none;
+  }
+  
+}
