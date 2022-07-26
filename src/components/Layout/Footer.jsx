@@ -34,7 +34,7 @@ const Footer = () =>  {
         </nav>
       </div>
       <div className={styles.footBottom}>
-        <h2 className={styles.footLogo}><img src="../img/logo.svg" alt="logo" /></h2>
+        <h2 className={styles.footLogo}><img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt="logo" /></h2>
         <div className={styles.footTxt}>
           <div className={styles.footPolicy}>
             <a href="#">이용약관 및 위치 서비스</a>
@@ -45,9 +45,9 @@ const Footer = () =>  {
           <p>Copyright ⓒ 2020 National Institute for Lifelong Education. All Rights Reserved.</p>
         </div>
         <div className={styles.footMark}>
-          <img src="../img/foot-logo_moe.svg" alt="footmark"/>
-          <img src="../img/foot-logo_nile.svg" alt="footmark"/>
-          <img src="../img/foot-logo_wa.png" alt="footmark"/>
+          <img src={`${process.env.PUBLIC_URL}/img/foot-logo_moe.svg`} alt="footmark"/>
+          <img src={`${process.env.PUBLIC_URL}/img/foot-logo_nile.svg`} alt="footmark"/>
+          <img src={`${process.env.PUBLIC_URL}/img/foot-logo_wa.png`} alt="footmark"/>
         </div>
       </div>
     </footer>

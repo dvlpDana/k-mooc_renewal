@@ -11,20 +11,24 @@ import {
   faHouse,
   faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
+
+import {Routes, Route, Link} from "react-router-dom";
+
 import { Mobile, Pc } from "../MediaQuery";
 import { useState } from "react";
 
 const Header = () => {
   const [searchBox, setSearchBox] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
     <>
       <Pc>
         <header>
           <h1 className={styles.logo}>
-            <a href="#">
-              <img src="../img/logo.svg" alt="logo" />
-            </a>
+            <Link to="/">
+              <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt="logo" />
+            </Link>
           </h1>
 
           {searchBox === true ? (
@@ -44,16 +48,16 @@ const Header = () => {
       <Mobile>
         <header>
           <h1 className={styles.logo}>
-            <a href="#">
-              <img src="../img/logo.svg" alt="logo" />
+            <a href="/">
+              <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt="logo" />
             </a>
           </h1>
           <div className={styles.privateMenu}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
             <FontAwesomeIcon icon={faGlobe} />
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBars} onClick={()=>{setMobileMenu(!mobileMenu)}}/>
           </div>
-          {/* <MobileMenu/> */}
+          {mobileMenu === true ? <MobileMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu}/> : null}
           <MobileBottomMenu />
         </header>
       </Mobile>
@@ -74,7 +78,7 @@ const SearchBar = (props) => {
           <input
             id={styles.searchContent}
             type="search"
-            name="q"
+            autoComplete="false"
             placeholder="무엇을 배우고 싶은가요?"
           />
         </label>
@@ -121,35 +125,35 @@ const SearchBox = (props) => {
           <h2 className={styles.searchBoxHeader}>교육과정 분류</h2>
           <p className={styles.divisionSubjectCon}>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_01.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_01.png`} alt="division-button" />
               <span>인문</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_02.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_02.png`} alt="division-button" />
               <span>사회</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_03.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_03.png`} alt="division-button" />
               <span>예체능</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_04.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_04.png`} alt="division-button" />
               <span>융복합</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_05.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_05.png`} alt="division-button" />
               <span>자연</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_06.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_06.png`} alt="division-button" />
               <span>의약</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_07.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_07.png`} alt="division-button" />
               <span>공학</span>
             </a>
             <a href="#" className={styles.subjectBtn}>
-              <img src="../img/icon/search_08.png" alt="division-button" />
+              <img src={`${process.env.PUBLIC_URL}/img/icon/search_08.png`} alt="division-button" />
               <span>블루리본</span>
             </a>
           </p>
@@ -159,20 +163,76 @@ const SearchBox = (props) => {
   );
 };
 
-const MobileMenu = () => {
+const MobileMenu = (props) => {
   return (
     <>
       <div className={styles.mobileMenu}>
-        <span>회원가입</span>
-        <span>로그인</span>
-        <nav>
-          <ul>
-            <li>메뉴1</li>
-            <li>메뉴2</li>
-            <li>메뉴3</li>
-            <li>메뉴4</li>
+        <div className={styles.mobileBtnCon}>
+          <Link to="/signUp" className={styles.mobileBtn}>회원가입</Link>
+          <Link to="/login" className={styles.mobileBtn}>로그인</Link>
+        </div>
+        <div className={styles.mobileIconCon}>
+          <Link to="/" className={styles.mobileIcon}>
+            <div className={styles.mobileIconImg}><img src={`${process.env.PUBLIC_URL}/img/icon/quick_01.png`} alt="quick" /></div>
+            <span>매치업 강좌</span>
+          </Link>
+          <Link to="/" className={styles.mobileIcon}>
+            <div className={styles.mobileIconImg}><img src={`${process.env.PUBLIC_URL}/img/icon/quick_02.png`} alt="quick" /></div>
+            <span>학점은행강좌</span>
+          </Link>
+          <Link to="/" className={styles.mobileIcon}>
+            <div className={styles.mobileIconImg}><img src={`${process.env.PUBLIC_URL}/img/icon/quick_03.png`} alt="quick" /></div>
+            <span>묶음강좌</span>
+          </Link>
+          <Link to="/" className={styles.mobileIcon}>
+            <div className={styles.mobileIconImg}><img src={`${process.env.PUBLIC_URL}/img/icon/quick_04.png`} alt="quick" /> </div>
+            <span>분야별강좌</span>
+          </Link>
+          <Link to="/" className={styles.mobileIcon}>
+            <div className={styles.mobileIconImg}><img src={`${process.env.PUBLIC_URL}/img/icon/quick_05.png`} alt="quick" /></div>
+            <span>교양강좌</span>
+          </Link>
+        </div>
+        <nav className={styles.mobileMenuLinkCon}>
+          <ul className={styles.mobileMenuLink}>
+            <li>
+              <span>K-MOOC 소개</span>
+              <ul className={styles.mobileSubMenu}>
+                <li>K-MOOC이란?</li>
+                <li>추진체계</li>
+                <li>참여기관</li>
+              </ul>
+            </li>
+            <li>
+              <span>강좌찾기</span>
+              <ul className={styles.mobileSubMenu}>
+                <li>분야별 강좌</li>
+                <li>묶음 강좌</li>
+                <li>학점은행과정</li>
+              </ul>
+            </li>
+            <li>
+              <span>커뮤니티</span>
+              <ul className={styles.mobileSubMenu}>
+                <li>공지사항</li>
+                <li>뉴스</li>
+                <li>자료실</li>
+                <li>FAQ</li>
+                <li>K-MOOC에 바라는 점</li>
+              </ul>
+            </li>
           </ul>
         </nav>
+        <div className={styles.snsLinkCon}>
+          <a href="#" className={styles.snsLink}><img src={`${process.env.PUBLIC_URL}/img/mobile_sns01.png`} alt="sns" /></a>
+          <a href="#" className={styles.snsLink}><img src={`${process.env.PUBLIC_URL}/img/mobile_sns02.png`} alt="sns" /></a>
+          <a href="#" className={styles.snsLink}><img src={`${process.env.PUBLIC_URL}/img/mobile_sns03.png`} alt="sns" /></a>
+          <a href="#" className={styles.snsLink}><img src={`${process.env.PUBLIC_URL}/img/mobile_sns04.png`} alt="sns" /></a>
+        </div>
+        <div className={styles.closeBtn} onClick={()=>{props.setMobileMenu(!props.mobileMenu);}}>
+          <span></span>
+          <span></span>
+        </div>
       </div>
       <div className={styles.mobileMenuBg}></div>
     </>
