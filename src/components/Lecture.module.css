@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .lectureList {
   position: relative;
 }
@@ -118,3 +119,125 @@
 
 
 
+=======
+.lectureList {
+  position: relative;
+}
+
+.lectureList:hover .lectureSubject{
+  background-color: var(--point-color);
+  color : white;
+}
+
+.lectuerImg {
+  position: relative;
+  padding-top: 60%;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.lectuerImg img {
+  position: absolute;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lectureSubject {
+  color: var(--point-color);
+  font-size: smaller;
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid var(--point-color);
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  transition: .3s;
+}
+
+.lectureTiltle {
+  font-weight: bold;
+  line-height: 1.4rem;
+  height: 2.8rem;
+  margin-bottom: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.lectureInfo {
+  color : var(--gray-color);
+  position: relative;
+  font-size: smaller;
+  padding-bottom: 2rem;
+}
+
+.lectureInfo span {
+  padding-right: 1rem;
+  position: relative;
+}
+
+.lectureInfo span:first-of-type:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: var(--lightest-gray);
+  right: 0.5rem;
+  top: 0;
+}
+
+.lectureInfo::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--lightest-gray);
+  bottom: 1rem;
+}
+
+.lecturePeriod {
+  font-size: smaller;
+  width: 70%;
+  word-break: break-all;
+}
+
+.lectureState {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: smaller;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.state {
+  background-color: lightgray;
+}
+
+.stateGreen {
+  background-color: #05A823;
+}
+
+.stateGray {
+  background-color: var(--gray-color);
+}
+
+.stateBlue {
+  background-color: #4C6EF5;
+}
+
+@media (max-width: 510px) {
+  .lectureSubject  {
+    display: none;
+  }
+}
+
+
+
+>>>>>>> f5ad78b22976f4552906df481820e1a57f608396
