@@ -50,8 +50,10 @@ const RecommendLecture = () => {
 
 const RecommendLetureList = (props) => {
 
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.lectureList}>
+    <div className={styles.lectureList} onClick={() => { navigate("/enrolment") }}>
       <div className={styles.lectuerImg}>
         <img
           src={`${process.env.PUBLIC_URL}/img/${props.recommendedList.img}`}

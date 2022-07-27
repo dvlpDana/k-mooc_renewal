@@ -3,23 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import Login from "./pages/Login.jsx";
-import { SignUp } from "./pages/SignUp.jsx";
-import Enrolment from "./pages/Enrolment.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path="*" element={<App />}>
-          <Route path="login" element={<Login />} />
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="enrolment" element={<Enrolment />}/>
-        </Route>
-      </Routes>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

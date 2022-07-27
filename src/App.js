@@ -21,12 +21,19 @@ import {
   NewLecture,
 } from "./components/Lecture";
 
+import Login from "./pages/Login.jsx";
+import { SignUp } from "./pages/SignUp.jsx";
+import Enrolment from "./pages/Enrolment.jsx";
+
 function App() {
   return (
     <div className="mobile-wrap">
       <Header />
       <Routes>
         <Route path="/" element={<MainIndex />} />
+        <Route path="login" element={<Login />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="enrolment" element={<Enrolment />}/>
       </Routes>
       <Footer />
     </div>
