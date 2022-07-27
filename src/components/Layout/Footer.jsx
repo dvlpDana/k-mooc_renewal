@@ -2,6 +2,7 @@ import styles from "./Footer.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () =>  {
   return(
@@ -34,20 +35,20 @@ const Footer = () =>  {
         </nav>
       </div>
       <div className={styles.footBottom}>
-        <h2 className={styles.footLogo}><img src="../img/logo.svg" alt="logo" /></h2>
+        <h2 className={styles.footLogo}><img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt="logo" /></h2>
         <div className={styles.footTxt}>
           <div className={styles.footPolicy}>
-            <a href="#">이용약관 및 위치 서비스</a>
-            <a href="#">개인정보 처리 방침</a>
-            <a href="#">저작권 보호 정책</a>
+            <Link to="/">이용약관 및 위치 서비스</Link>
+            <Link to="/">개인정보 처리 방침</Link>
+            <Link to="/">저작권 보호 정책</Link>
           </div>
           <p>고객센터 : 1811-3118 (평일 9:00~18:00 운영 / * 점심시간 12:00~13:00 제외)</p>
           <p>Copyright ⓒ 2020 National Institute for Lifelong Education. All Rights Reserved.</p>
         </div>
         <div className={styles.footMark}>
-          <img src="../img/foot-logo_moe.svg" alt="footmark"/>
-          <img src="../img/foot-logo_nile.svg" alt="footmark"/>
-          <img src="../img/foot-logo_wa.png" alt="footmark"/>
+          <img src={`${process.env.PUBLIC_URL}/img/foot-logo_moe.svg`} alt="footmark"/>
+          <img src={`${process.env.PUBLIC_URL}/img/foot-logo_nile.svg`} alt="footmark"/>
+          <img src={`${process.env.PUBLIC_URL}/img/foot-logo_wa.png`} alt="footmark"/>
         </div>
       </div>
     </footer>

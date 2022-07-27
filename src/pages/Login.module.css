@@ -1,0 +1,139 @@
+.secLogin {
+  height: 80vh;
+  display: flex;
+}
+
+.secLogin > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 0;
+}
+
+.snsLogin {
+  background-color: #FBF9F9;
+}
+
+.loginHeader {
+  font-size: 3rem;
+  font-family: "pretendard-extraBold";
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+/* login */
+.login form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputBox {
+  width: 100%;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+}
+
+.inputBox input {
+  width: 100%;
+  border-style: none;
+  padding: 0.75rem;
+  background-color: transparent;
+}
+
+.inputBox:first-child {
+  margin-bottom: 1rem;
+}
+
+.inputBox input::placeholder {
+  font-size: 1rem;
+  font-family: "miGothic";
+}
+
+.checkBoxArea {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+.itemCheckBox:first-of-type {
+  margin-right: 1rem;
+}
+
+.loginSearchBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.loginSearchBtn {
+  padding: 0 0.5rem;
+}
+
+.loginSearchBtn:nth-of-type(2) {
+  border-left: 1px solid var(--lightest-gray);
+  border-right: 1px solid var(--lightest-gray);
+}
+
+.btnOval {
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--icon-bg);
+  width: 180px;
+  cursor: pointer;
+}
+
+.btnLogin{
+  border-style: none;
+  font-size: 1rem;
+  font-family: "miGothic";
+  border-style: none;
+  margin: 1rem 0;
+  transition: .3s;
+}
+
+.btnLogin:hover {
+  background-color: var(--footer-bg);
+  color: white;
+}
+
+/* snsLogin */
+.btnWide {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+  border-radius: 1rem;
+  transition: .3s;
+}
+
+.btnWide:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.btnSnsLogin:nth-of-type(2) {
+  margin: 2rem 0;
+  color: white;
+}
+
+.btnSnsLogin:nth-of-type(3) {
+  background-color: white;
+}
+
+.kakao{ background-color: #FEE500;}
+
+.naver{ background-color: #1EC800;}
+
+.apple{ border: 1px solid var(--lightest-gray);}
+
+@media (max-width:768px) {
+  .secLogin {
+    flex-direction: column;
+    height: auto;
+  }
+}

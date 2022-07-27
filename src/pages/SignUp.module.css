@@ -1,0 +1,493 @@
+/* mainSignUp */
+
+.secHeader,
+.memberHeader {
+  font-family: "pretendard-extraBold";
+}
+
+.secHeader {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.memberHeader {
+  font-size: 2rem;
+}
+
+.secSignUp {
+  height: 80vh;
+  padding: 8rem 0;
+}
+
+.memberClassfication {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.memberClassfication > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memberClassfication h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memberClassfication h3 span {
+  color: var(--gray-color);
+  margin: 1rem 0;
+}
+
+.audultMember {
+  border-right: 1px solid var(--lightest-gray);
+}
+
+.audultMember,
+.childMember {
+  width: 30%;
+}
+
+.audultMember img,
+.childMember img {
+  width: 100%;
+  max-width: 180px;
+}
+
+.btnJoin {
+  background-color: transparent;
+  border-style: none;
+  font-family: inherit;
+  font-size: inherit;
+  width: 180px;
+  padding: 1rem 0;
+  border: 1px solid var(--light-gray);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnJoin:hover {
+  box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 1280px) {
+  .audultMember,
+  .childMember {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .btnJoin {
+    max-width: 120px;
+  }
+}
+
+/* Component - statusBar */
+
+.statusBar {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  padding: 3rem 0;
+}
+
+.statusBar li {
+  width: calc(100% / 3);
+}
+
+.statusBar li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.statusBar li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--lightest-gray);
+  top: 2.75rem;
+  left: 0;
+}
+
+.statusBar li strong {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: 1.5rem;
+}
+
+.statusBar li span {
+  color: var(--gray-color);
+  text-align: center;
+  padding-top: 1.25rem;
+  position: relative;
+}
+
+.statusBar li span::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--lightest-gray);
+  left: 50%;
+  transform: translate(-50%);
+  top: -6px;
+}
+
+/* Each step StatusBar emphasis */
+.secFirstStep .firstStep::before,
+.secSecondStep .secondStep::before,
+.secThirdStep .thirdStep::before {
+  background-color: var(--point-color);
+}
+
+.secFirstStep .firstStep,
+.secSecondStep .secondStep,
+.secThirdStep .thirdStep {
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+/* FirstSignUp */
+
+.selfAuthenticationArea {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.selfAuthenticationArea h2 {
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.btnSelfCon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.btnWide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  border-style: none;
+  padding: 1rem 5rem;
+  border: 1px solid var(--lightest-gray);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnWide:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.btnSelf:last-of-type {
+  margin-top: 2rem;
+}
+
+.btnSelf svg {
+  font-size: 1.25rem;
+}
+
+.btnSelf span {
+  color: var(--gray-color);
+  padding-left: 1rem;
+}
+
+.notiSelf {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+  padding-top: 0.5rem;
+}
+
+.snsJoinArea {
+  border-top: 1px solid var(--lightest-gray);
+  width: 80%;
+  margin: auto;
+}
+
+.snsJoinArea h3 {
+  padding: 2rem 0;
+  font-size: 1.25rem;
+}
+
+.snsIconCon {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.snsIcon {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circleSnsImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snsIcon span {
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.kakao {
+  background-color: #fee500;
+}
+
+.naver {
+  background-color: #1ec800;
+}
+
+.apple {
+  border: 1px solid var(--lightest-gray);
+}
+
+@media (max-width: 780px) {
+  .statusBar,
+  .selfAuthenticationArea {
+    width: 90%;
+  }
+
+  .snsJoinArea {
+    width: 80%;
+  }
+
+  .circleSnsImg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .circleSnsImg img {
+    width: 80%;
+  }
+
+  .snsIcon {
+    width: calc(100% / 3);
+  }
+}
+
+/* SecondSignUp */
+
+.joinInfoArea {
+  padding: 2rem 0;
+}
+
+.joinInfoArea h2 {
+  text-align: center;
+}
+
+.joinInfoArea h2 span {
+  display: block;
+  padding: 2rem 0;
+}
+
+.joinInfoArea h2 span strong {
+  color: red;
+}
+
+.joinForm {
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputTxtBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.inputTxt,
+.textArea {
+  border: 1px solid var(--light-gray);
+  padding: 0.75rem 1rem;
+}
+
+.inputTxt:focus,
+.textArea:focus {
+  outline: none;
+}
+
+.textArea {
+  height: 8rem;
+}
+
+.checkBox {
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+.checkBox input,
+.radioCon input {
+  margin-right: 0.5rem;
+}
+
+.checkBox label,
+.radioCon label{
+  margin-right: 2rem;
+}
+
+.termsCheckBox {
+  width: 100%;
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.termsCheckBox:first-of-type {
+  margin-bottom: 1rem;
+  position: relative;
+  border-bottom: 1px solid var(--lightest-gray);
+}
+
+.termsCheckBox input {
+  width: 1rem;
+}
+
+.termsCheckBox label {
+  width: calc(100% - 5rem)
+}
+
+.termsCheckBox span {
+  font-weight: bold;
+  width: 5rem;
+  text-align: right;
+  cursor: pointer;
+}
+
+.inputTxt::placeholder,
+.textArea::placeholder {
+  font-size: 0.9rem;
+  font-family: "miGothic";
+  color: var(--gray-color);
+}
+
+.inputHeader {
+  font-size: 1.25rem;
+  padding: 1rem 0;
+}
+
+.inputHeader span {
+  color: var(--gray-color)
+}
+
+.essentialInfo{
+  position: relative;
+}
+
+.essentialInfo::after {
+  content: "*";
+  color: red;
+  padding-left: 0.5rem;
+  font-size: smaller;
+}
+
+.inputExplanation {
+  display: block;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color : var(--gray-color);
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.inputExplanation strong {
+  color : red;
+}
+
+.inputExplanationCon .inputExplanation:not(:last-of-type) {
+  padding-top: 0.5rem;
+}
+
+.passwordValidation {
+  padding: 1rem 0;
+}
+
+.btnJoin {
+  margin: 2rem auto 0;
+}
+
+@media (max-width: 780px) {
+  .joinForm {
+    width: 80%;
+  }
+}
+
+/* ThirdSignUp */
+
+.secThirdStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--navy-color);
+  padding: 5rem 0;
+}
+
+.secThirdStep h2 {
+  font-family: "pretendard-extraBold";
+  font-size: 4rem;
+  padding-bottom: 3rem;
+  line-height: 1.4;
+}
+
+.secThirdStep h3 {
+  font-size: 2rem;
+  padding-bottom: 3rem;
+}
+
+.secThirdStep span {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: 5rem;
+}
+
+.btnOval {
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--icon-bg);
+  width: 180px;
+  cursor: pointer;
+}
+
+.btnLogin{
+  border-style: none;
+  font-size: 1rem;
+  font-family: "miGothic";
+  border-style: none;
+  margin: 1rem 0;
+  transition: .3s;
+}
+
+.btnLogin:hover {
+  background-color: var(--footer-bg);
+  color: white;
+}
