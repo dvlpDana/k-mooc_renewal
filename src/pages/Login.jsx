@@ -62,7 +62,7 @@ function Login() {
             type="submit"
             value="Sign in"
             className={`${styles.btnOval} ${styles.btnLogin}`}
-            id={styles.btnLogin} onClick={() => { navigate("/") }}
+            onClick={() => { navigate("/") }}
           >
             로그인
           </button>

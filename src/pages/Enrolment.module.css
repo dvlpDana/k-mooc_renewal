@@ -1,3 +1,392 @@
-.Enrolment {
-  height: 100vh;
+.secEnrolment {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lectureDetailCon {
+  width: calc(70% - 3rem);
+}
+
+
+.lectureSideBar {
+  width: calc(30%);
+}
+
+/* lectureDetailCon */
+
+.lectureDetailCon > * {
+  padding: 2rem 0;
+}
+
+.lectureHeader h2 {
+  font-family: "pretendard-extraBold";
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.lectureClassfication {
+  font-size: 1.25rem;
+  color: var(--gray-color);
+  display: flex;
+  padding-bottom: 1.5rem;
+}
+
+.lectureClassfication > li {
+  position: relative;
+  padding-right: 2rem;
+}
+
+.lectureClassfication > li:not(:last-of-type)::after {
+  content: ">";
+  position: absolute;
+  right: 1rem;
+  font-size: small;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lectureHashTag {
+  display : inline-block;
+  width : 120px;
+  padding : 1rem 0;
+  border : 1px solid var(--light-gray);
+  border-radius : 2rem;
+  text-align : center;
+}
+
+.hashtagsCon {
+  display: flex;
+}
+
+.hashtagsCon > *:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.lectureDetailCon h3 {
+  font-family: "pretendard-extraBold";
+  font-size: 1.75rem;
+  padding-bottom: 2rem;
+}
+
+/* ----lecturePreview---- */
+
+.lectureInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lectureInfo > * {
+  width: calc((100% / 2) - 1rem);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.lectureMovie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lectureMovie iframe{
+  width: 100%;
+  min-height: 300px;
+}
+
+.lectureInfoTxt {
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* ----lectureIndex--- */
+
+.lecturePlanTable {
+  text-align: center;
+}
+
+.lecturePlanTable th {
+  font-size: larger;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.lecturePlanTable thead {
+  border-bottom: 1px solid var(--point-color);
+}
+
+.lecturePlanTable td {
+  height: 2.5rem;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.rowTop {
+  border-top: 1px solid var(--light-gray);
+}
+
+.rowTop:last-child {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* ----lectureCourseInfo---- */
+.lectureCourseInfo h4{
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+
+.evaluationStandardTable {
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--light-gray);
+  border-collapse: collapse;
+}
+
+.evaluationStandardTable th,
+.evaluationStandardTable td {
+  height: 2.5rem;
+  vertical-align: middle;
+}
+
+.evaluationStandardTable th:not(:last-child),
+.evaluationStandardTable td:not(:last-child) {
+  border-right: 1px solid var(--light-gray);
+}
+
+.evaluationStandardTable th {
+  background-color: var(--lightest-gray);
+}
+
+.evaluationInfoList {
+  padding: 1rem 0;
+}
+
+.evaluationInfoList li {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.evaluationInfoList li span {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.evaluationInfoList > li::before {
+  content: "∙";
+  position: absolute;
+  left: 0.25rem;
+}
+
+.evaluationInfoList ol > li::before {
+  content: "-";
+  position: absolute;
+  left: 0.25rem;
+}
+
+/* ---- questions ---- */
+.questions span,
+.questions strong {
+  display: block;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.questions strong {
+  font-weight: bold;
+  position: relative;
+}
+
+.questions strong::before {
+  content: ">";
+  position: absolute;
+  left: 0.25rem;
+  font-size: smaller;
+  bottom: 1rem
+}
+
+/* lectureSideBar */
+.lectureSideInfoCon {
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.lectureImg img {
+  width: 100%;
+}
+
+.lectureImg {
+  position: relative;
+}
+
+.lectureImg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.lectureImg figcaption {
+  position: absolute;
+  width: 100%;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+.lectureImg figcaption strong {
+  font-family: "pretendard-extraBold";
+  display: block;
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.lectureImg figcaption span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.lectureSideInfo {
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.lectureSideInfo li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.lectureSideInfo li > strong {
+ width: 30%;
+}
+
+.lectureSideInfo li > span {
+  padding-left: 0.5rem;
+  width: 70%;
+} 
+
+.lectureStarIconCon svg {
+  color : #ddb516;
+}
+
+.lectureSideInfo li:last-of-type {
+  border-bottom: 1px solid var(--lightest-gray); 
+}
+
+.lectureSnsLink {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.snsLinkBtn {
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  width: 50px;
+  height: 50px;
+  border-radius : 50%;
+  background-color : var(--footer-bg);
+
+}
+
+.lectureSnsLink > *:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.lectureBtnCon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lectureBtnCon > *:first-child {
+  width: 20%;
+}
+
+.lectureBtnCon >*:nth-child(2) {
+  width: calc(80% - 1rem);
+}
+
+.lectureBtnCon >*:nth-child(2) svg {
+  margin-left: 0.5rem;
+}
+
+.markBtn {
+  background-color : white;
+  border-style: none;
+  padding : 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  font-size: 2rem;
+  color : var(--light-gray);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.markBtn:hover {
+  color : var(--point-color);
+}
+
+.learnLinkBtn {
+  padding : 1rem 0;
+  box-shadow: var(--box-shadow);
+  border-radius : 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size : larger;
+  letter-spacing : 2px;
+  font-weight: bold;
+  color : #555;
+}
+
+.learnLinkBtn:hover {
+  background-color : var(--icon-bg) 
+}
+
+@media (max-width: 1280px) {
+  .secEnrolment {
+    width: 90%;
+  }
+}
+
+@media (max-width : 1080px) {
+  .lectureSideBar {
+    display: none;
+  }
+  .lectureDetailCon {
+    width: 100%;
+  }
+}
+
+@media (max-width : 780px) {
+  .lectureMovie {
+    width: 100%;
+  }
+  .lectureInfoTxt {
+    display: none;
+  }
+  .hashtagsCon {
+    display: none;
+  }
 }

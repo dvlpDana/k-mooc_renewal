@@ -114,9 +114,11 @@ const PopularLecture = () => {
 };
 
 const PoplularLetureList = (props) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.lectureList}>
-      <div className={styles.lectuerImg}>
+      <div className={styles.lectuerImg} onClick={() => { navigate("/enrolment") }}>
         <img
           src={`${process.env.PUBLIC_URL}/img/${props.popularList.img}`}
           alt="lectureImg"
@@ -176,8 +178,11 @@ const NewLecture = () => {
 };
 
 const NewLetureList = (props) => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.lectureList}>
+    <div className={styles.lectureList} onClick={() => { navigate("/enrolment") }}>
       <div className={styles.lectuerImg}>
         <img
           src={`${process.env.PUBLIC_URL}/img/${props.newList.img}`}
