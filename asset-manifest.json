@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/k-mooc_renual/static/css/main.8d904afa.css",
-    "main.js": "/k-mooc_renual/static/js/main.690a145a.js",
+    "main.css": "/k-mooc_renual/static/css/main.ba4f6162.css",
+    "main.js": "/k-mooc_renual/static/js/main.4796e19e.js",
     "static/js/787.c657dfdb.chunk.js": "/k-mooc_renual/static/js/787.c657dfdb.chunk.js",
     "static/media/Pretendard-Regular.ttf": "/k-mooc_renual/static/media/Pretendard-Regular.7c20008ec8c0968904c4.ttf",
     "static/media/Pretendard-ExtraBold.ttf": "/k-mooc_renual/static/media/Pretendard-ExtraBold.7ca47a8c0824d1f740dc.ttf",
     "static/media/MICEGothic.ttf": "/k-mooc_renual/static/media/MICEGothic.5a7fbc79a4a1221ac7ce.ttf",
     "static/media/ROKAFSansBold.ttf": "/k-mooc_renual/static/media/ROKAFSansBold.066b89a862865c152261.ttf",
     "index.html": "/k-mooc_renual/index.html",
-    "main.8d904afa.css.map": "/k-mooc_renual/static/css/main.8d904afa.css.map",
-    "main.690a145a.js.map": "/k-mooc_renual/static/js/main.690a145a.js.map",
+    "main.ba4f6162.css.map": "/k-mooc_renual/static/css/main.ba4f6162.css.map",
+    "main.4796e19e.js.map": "/k-mooc_renual/static/js/main.4796e19e.js.map",
     "787.c657dfdb.chunk.js.map": "/k-mooc_renual/static/js/787.c657dfdb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d904afa.css",
-    "static/js/main.690a145a.js"
+    "static/css/main.ba4f6162.css",
+    "static/js/main.4796e19e.js"
   ]
 }
