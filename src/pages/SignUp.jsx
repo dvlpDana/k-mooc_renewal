@@ -4,6 +4,7 @@ import { Link, Routes, Route, useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileScreen, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const SignUp = () => {
   return (
@@ -96,8 +97,44 @@ const FirstSignUp = () => {
 }
 
 const SecondSignUp = () => {
-
   const navigate = useNavigate();
+
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    email: '',
+    password: '',
+    userName: '',
+    userSex: '',
+    birthDate: '',
+  });
+
+  const { id, email, password, userName, userSex, birthDate } = inputValue;
+
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    });
+  };
+
+  const isValidId = id.includes('@') && email.includes('.');
+
+  const isValidEmail = email.includes('@') && email.includes('.');
+
+  const specialLetter = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+  const isValidPassword = password.length >= 8 && specialLetter >= 1;
+
+  // const isValidInput = userName.length >= 1 && id.length >= 1 && email.length >= 1 && userSex.length >= 1  && birthDate.length >= 1;
+
+  const handleButtonValid = () => {
+    if ( !isValidId || !isValidEmail || !isValidPassword) {
+      return alert('필수 항목이 기입되지 않았습니다. 아이디와 비밀번호가 양식에 맞게 기입되어 있는지 확인해주세요.');
+    } else {
+      return navigate("/sign-up/step3")
+    };
+  }
 
   return (
     <section className={styles.secSecondStep}>
@@ -111,51 +148,56 @@ const SecondSignUp = () => {
 
           <section className={styles.joinForm}>
             <div className={styles.inputTxtBox}>
-              <label htmlFor="id" className={`${styles.inputHeader} ${styles.essentialInfo}`}>아이디(이메일 주소)</label>
+              <label htmlFor="userId" className={`${styles.inputHeader} ${styles.essentialInfo}`}>아이디(이메일 주소)</label>
               <input
-                type="text"
+                type="email"
+                name="id"
                 className={styles.inputTxt}
-                id={styles.id}
+                id={styles.userId}
                 placeholder="useID@domain.com"
                 title="아이디"
                 required
                 autoComplete="off"
+                onChange={handleInput}
               />
             </div>
             <div className={styles.inputTxtBox}>
               <label htmlFor="subEmail" className={`${styles.inputHeader} ${styles.essentialInfo}`}>보조 이메일</label>
               <input
                 type="email"
+                name="email"
                 className={styles.inputTxt}
                 id={styles.subEmail}
                 placeholder="useID@domain.com"
                 title="보조 이메일"
                 required
                 autoComplete="off"
+                onChange={handleInput}
               />
               <span className={styles.inputExplanation}>( 입력하신 보조 이메일은 이메일 찾기에 사용됩니다 )</span>
             </div>
             <div className={styles.inputTxtBox}>
-              <label htmlFor="pw" className={`${styles.inputHeader} ${styles.essentialInfo}`}>비밀번호</label>
+              <label htmlFor="userPassWord" className={`${styles.inputHeader} ${styles.essentialInfo}`}>비밀번호</label>
               <input
                 type="password"
+                name="password"
                 className={styles.inputTxt}
-                id={styles.pw}
+                id={styles.userPassWord}
                 placeholder="비밀번호를 입력해주세요"
                 title="비밀번호"
                 minLength="8"
                 required
-                autoComplete="off"
+                autoComplete="off" onChange={handleInput}
               />
               <span className={styles.inputExplanation}>( 영어소문자, 숫자, 특수문자를 모두 사용하여 8자 이상으로 입력해 주세요<br />
                 사용가능 특수문자: ~!@#$%^&*()_+|?:{ } )</span>
             </div>
             <div className={styles.inputTxtBox}>
-              <span className={styles.passwordValidation}>사용가능한 비밀번호 입니다</span>
+              <span id={styles.passwordValidation}>사용가능한 비밀번호 입니다</span>
               <input
                 type="password"
                 className={styles.inputTxt}
-                id={styles.confirmPw}
+                id={styles.userPassWordConfirm}
                 placeholder="비밀번호를 한 번 더 입력해주세요"
                 title="비밀번호"
                 minLength="8"
@@ -165,7 +207,7 @@ const SecondSignUp = () => {
             </div>
             <div className={styles.inputTxtBox}>
               <label htmlFor="userName" className={`${styles.inputHeader} ${styles.essentialInfo}`}>이름</label>
-              <input type="text" className={styles.inputTxt} id={styles.userName} placeholder="실명" required />
+              <input type="text" name="userName" className={styles.inputTxt} id={styles.userName} placeholder="실명" required onChange={handleInput} />
               <span className={styles.inputExplanation}>
                 <strong>
                   (수료증에 표기되는 이름으로, 회원가입 후 수정이 불가능합니다)
@@ -175,15 +217,15 @@ const SecondSignUp = () => {
             <div className={styles.inputTxtBox}>
               <h3 className={`${styles.inputHeader} ${styles.essentialInfo}`}>성별</h3>
               <div className={styles.radioCon}>
-                <input type="radio" id={styles.male} value="male" name="userSex" />
+                <input type="radio" id={styles.male} value="male" name="userSex" onChange={handleInput} />
                 <label htmlFor="male">남성</label>
-                <input type="radio" id={styles.female} value="female" name="userSex" />
+                <input type="radio" id={styles.female} value="female" name="userSex" onChange={handleInput} />
                 <label htmlFor="female">여성</label>
               </div>
             </div>
             <div className={styles.inputTxtBox}>
               <label htmlFor="birthDate" className={`${styles.inputHeader} ${styles.essentialInfo}`}>생년월일</label>
-              <input type="date" className={styles.inputTxt} id={styles.birthDate}></input>
+              <input type="date" name="birthDate" className={styles.inputTxt} id={styles.birthDate}></input>
             </div>
             <div className={styles.inputTxtBox}>
               <label htmlFor="userCountry" className={styles.inputHeader}>국가 <span>(선택)</span></label>
@@ -217,7 +259,6 @@ const SecondSignUp = () => {
                 <span className={styles.inputExplanation}>※ 수신동의를 하지 않으실 경우, 학습안내, 이벤트 당첨결과 및 혜택 등의 메시지를 수신하실 수 없습니다</span>
               </p>
             </div>
-
             <div className={styles.inputTxtBox}>
               <h3 className={styles.inputHeader}>약관 동의</h3>
               <div className={styles.termsCheckBox}>
@@ -235,7 +276,8 @@ const SecondSignUp = () => {
                 <span>내용 보기</span>
               </div>
             </div>
-            <button className={styles.btnJoin} type="submit" data="child" onClick={() => { navigate("/sign-up/step3") }}>가입하기</button>
+
+            <button className={styles.btnJoin} type="submit" data="joinInfo" onClick={handleButtonValid} >가입하기</button>
           </section>
 
         </form>
@@ -243,6 +285,7 @@ const SecondSignUp = () => {
     </section>
   );
 }
+
 
 const ThirdSignUp = () => {
 
