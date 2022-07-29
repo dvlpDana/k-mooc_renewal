@@ -65,11 +65,6 @@ const Header = () => {
         </header>
       </Mobile>
 
-      <Routes>
-        <Route path = "/login" element={<Login/>}/>
-        <Route path = "/sign-up/*" element={<SignUp/>}/>
-      </Routes>
-
     </>
   );
 };

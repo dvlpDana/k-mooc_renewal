@@ -447,7 +447,7 @@ const SecondSignUp = () => {
               </div>
             </div>
 
-            <button className={styles.btnJoin} type="submit" data="joinInfo">
+            <button className={styles.btnJoin} type="submit" data="joinInfo " onClick={handleButtonValid}>
               가입하기
             </button>
           </section>
