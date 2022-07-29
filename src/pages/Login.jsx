@@ -2,7 +2,7 @@ import styles from "./Login.module.css";
 
 import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+const Login = () => {
 
   const navigate = useNavigate();
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -22,22 +22,37 @@ import {
 } from "./components/Lecture";
 
 import Login from "./pages/Login.jsx";
-import { SignUp } from "./pages/SignUp.jsx";
+import { SignUp, MainSignUp, FirstSignUp, SecondSignUp, ThirdSignUp } from "./pages/SignUp.jsx";
 import Enrolment from "./pages/Enrolment.jsx";
 
 function App() {
   return (
     <div className="mobile-wrap">
-      <Header />
       <Routes>
-        <Route path="/" element={<MainIndex />} />
-        <Route path="login" element={<Login />} />
-        <Route path="sign-up" element={<SignUp />} />
-        <Route path="enrolment" element={<Enrolment />}/>
+        <Route path="*" element={<Layout/>}>
+          <Route index element={<MainIndex />} />
+          <Route path="login" element={<Login />} />
+          <Route path="sign-up/*" element={<SignUp />}>
+            <Route index element={<MainSignUp />}/>
+            <Route path="step1" element={<FirstSignUp />} />
+            <Route path="step2" element={<SecondSignUp />} />
+            <Route path="step3" element={<ThirdSignUp />} />
+          </Route>
+          <Route path="enrolment" element={<Enrolment />}/>
+        </Route>
       </Routes>
-      <Footer />
     </div>
   );
+}
+
+function Layout() {
+  return(
+    <>
+      <Header/>
+      <Outlet/>
+      <Footer/>
+    </>
+  )
 }
 
 function MainIndex() {
