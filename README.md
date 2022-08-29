@@ -98,7 +98,7 @@ const recommendenLectureData = [
 <img src="https://user-images.githubusercontent.com/102039456/187171900-0d993f77-40c2-489a-a054-48140a61060b.png">
 
 ### 2. 회원가입 페이지 유효성 검사 기능 구현
-> 코드
+> 코드(SignUp.jsx)
 ```javascript
   ・・・
   const navigate = useNavigate();
