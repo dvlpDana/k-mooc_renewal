@@ -1,4 +1,4 @@
-# K-MOOC 리뉴얼 프로젝트
+# K-MOOC 리뉴얼 프로젝트(22.07.07~22.07.19)
 
 ![project_1_mockup](https://user-images.githubusercontent.com/102039456/187153931-f9ac4997-37c5-48f0-a555-c58f6878c375.jpg)
 
